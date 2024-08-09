@@ -13,3 +13,5 @@ steps:
   - --trigger-http
 substitutions:
   _LOCATION: asia-northeast1
+options:
+  logging: CLOUD_LOGGING_ONLY
