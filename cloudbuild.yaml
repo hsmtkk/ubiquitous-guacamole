@@ -5,13 +5,13 @@ steps:
   - functions
   - deploy
   - scrape
-  - --entry-point=EntryPoint
+  - --entry-point=Scrape
   - --gen2
   - --region=${_LOCATION}
   - --runtime=go121
   - --source=function
   - --trigger-http
 substitutions:
-  _LOCATION: asia-northeast1
+  _LOCATION: us-central1
 options:
   logging: CLOUD_LOGGING_ONLY
