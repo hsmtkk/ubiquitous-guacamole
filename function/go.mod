@@ -1,4 +1,4 @@
-module github.com/hsmtkk/ubiquitous-guacamole
+module github.com/hsmtkk/ubiquitous-guacamole/function
 
 go 1.22.1
 

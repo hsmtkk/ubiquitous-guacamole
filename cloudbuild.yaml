@@ -9,7 +9,7 @@ steps:
   - --gen2
   - --region=${_LOCATION}
   - --runtime=go121
-  - --source=scrape
+  - --source=function
   - --trigger-http
 substitutions:
   _LOCATION: asia-northeast1
