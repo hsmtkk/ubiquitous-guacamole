@@ -1,0 +1,17 @@
+version: '3'
+
+tasks:
+  fmt:
+    cmds:
+    - terraform fmt
+  validate:
+    cmds:
+    - terraform validate
+  apply:
+    cmds:
+    - terraform apply -auto-approve
+  default:
+    cmds:
+    - task: fmt
+    - task: validate
+    - task: apply
