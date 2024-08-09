@@ -3,10 +3,16 @@ resource "google_service_account" "cloudbuild_sa" {
   project    = var.project_id
 }
 
-resource "google_project_iam_member" "cloudbuild_sa_service_account" {
-  project = var.project_id
-  role    = "roles/iam.serviceAccountUser"
-  member  = "serviceAccount:${google_service_account.cloudbuild_sa.email}"
+# resource "google_project_iam_member" "cloudbuild_sa_service_account" {
+#   project = var.project_id
+#   role    = "roles/iam.serviceAccountUser"
+#   member  = "serviceAccount:${google_service_account.cloudbuild_sa.email}"
+# }
+
+resource "google_service_account_iam_member" "cloudbuild_sa_service_account" {
+  service_account_id = google_service_account.cloudbuild_sa.name
+  role               = "roles/iam.serviceAccountUser"
+  member             = "serviceAccount:${var.project_number}@cloudbuild.gserviceaccount.com"
 }
 
 resource "google_project_iam_member" "cloudbuild_sa_log_writer" {

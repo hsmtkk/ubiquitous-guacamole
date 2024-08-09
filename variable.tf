@@ -3,6 +3,11 @@ variable "project_id" {
   default = "ubiquitous-guacamole"
 }
 
+variable "project_number" {
+  type    = string
+  default = "649822526937"
+}
+
 variable "location" {
   type    = string
   default = "us-central1"
