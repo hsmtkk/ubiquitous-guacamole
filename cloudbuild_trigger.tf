@@ -9,11 +9,11 @@ resource "google_service_account" "cloudbuild_sa" {
 #   member  = "serviceAccount:${google_service_account.cloudbuild_sa.email}"
 # }
 
-# resource "google_project_iam_member" "cloudbuild_sa_log_writer" {
-#   project = var.project_id
-#   role    = "roles/logging.logWriter"
-#   member  = "serviceAccount:${google_service_account.cloudbuild_sa.email}"
-# }
+resource "google_project_iam_member" "cloudbuild_sa_log_writer" {
+  project = var.project_id
+  role    = "roles/logging.logWriter"
+  member  = "serviceAccount:${google_service_account.cloudbuild_sa.email}"
+}
 
 resource "google_cloudbuild_trigger" "the_trigger" {
   filename = "cloudbuild.yaml"
