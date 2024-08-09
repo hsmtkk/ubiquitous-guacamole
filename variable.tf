@@ -5,7 +5,7 @@ variable "project_id" {
 
 variable "location" {
   type    = string
-  default = "asia-northeast1"
+  default = "us-central1"
 }
 
 variable "repository" {
